@@ -6,12 +6,10 @@ console.log(cv);
 const canvas = document.createElement('canvas');
 document.body.appendChild(canvas);
 const context = canvas.getContext('2d')!;
-const img = new Image();
-img.crossOrigin = 'anonymous';
-img.onload = function () {
-  canvas.width = img.width;
-  canvas.height = img.height;
-  console.log(img.width, img.height);
-  context.drawImage(img, 0, 0, img.width, img.height);
+const image = new Image();
+image.onload = () => {
+  canvas.width = image.width;
+  canvas.height = image.height;
+  context.drawImage(image, 0, 0, image.width, image.height);
 };
-img.src = windowButtons;
+image.src = windowButtons;
