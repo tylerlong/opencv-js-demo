@@ -4,13 +4,27 @@
     <title>OpenCV.js Demo</title>
   </head>
   <body>
-    <canvas id="canvasInput" width="252" height="312"></canvas>
-    <canvas id="canvasOutput" width="252" height="312"></canvas>
+    <canvas id="canvasInput" width="81" height="31"></canvas>
+    <canvas id="canvasOutput" width="81" height="31"></canvas>
     <hr/>
     <button onclick="doIt()">Do it</button>
     <script src="https://docs.opencv.org/4.5.3/opencv.js"></script>
-    <script src="index.js"></script>
     <script>
+      const loadImageToCanvas = (url, cavansId) => {
+        let canvas = document.getElementById(cavansId);
+        let ctx = canvas.getContext('2d');
+        let img = new Image();
+        img.crossOrigin = 'anonymous';
+        img.onload = function() {
+            canvas.width = img.width;
+            canvas.height = img.height;
+            ctx.drawImage(img, 0, 0, img.width, img.height);
+        };
+        img.src = url;
+      };
+
+      loadImageToCanvas('window-buttons.png', 'canvasInput');
+
       function doIt() {
         console.log('doIt');
         let src = cv.imread('canvasInput');
@@ -20,7 +34,7 @@
         cv.cvtColor(src, src, cv.COLOR_RGBA2GRAY, 0);
         // You can try more different parameters
         cv.HoughCircles(src, circles, cv.HOUGH_GRADIENT,
-                        1, 45, 75, 40, 10, 50);
+                        1, 5, 75, 40, 5, 10);
         // draw circles
         for (let i = 0; i < circles.cols; ++i) {
             let x = circles.data32F[i * 3];
@@ -30,7 +44,9 @@
             cv.circle(dst, center, radius, color);
         }
         cv.imshow('canvasOutput', dst);
-        src.delete(); dst.delete(); circles.delete();
+        src.delete(); 
+        dst.delete(); 
+        circles.delete();
       }
     </script>
   </body>
