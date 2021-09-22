@@ -10,8 +10,8 @@
     <button onclick="doIt()">Do it</button>
     <script src="https://docs.opencv.org/4.5.3/opencv.js"></script>
     <script>
-      const loadImageToCanvas = (url, cavansId) => {
-        let canvas = document.getElementById(cavansId);
+      const loadImageToCanvas = (url, canvasId) => {
+        let canvas = document.getElementById(canvasId);
         let ctx = canvas.getContext('2d');
         let img = new Image();
         img.crossOrigin = 'anonymous';
