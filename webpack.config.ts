@@ -6,6 +6,14 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 const config: Configuration = {
   entry: './src/index.ts',
   plugins: [new HtmlWebpackPlugin()],
+  module: {
+    rules: [
+      {
+        test: /\.(png|jpe?g)$/i,
+        use: 'file-loader',
+      },
+    ],
+  },
   resolve: {
     fallback: {
       crypto: require.resolve('crypto-browserify'),
