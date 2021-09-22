@@ -5,6 +5,7 @@
   },
   "devDependencies": {
     "@types/node": "^16.9.6",
+    "@types/pngjs": "^6.0.1",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.0",
     "file-loader": "^6.2.0",
@@ -20,6 +21,8 @@
     "yarn-upgrade-all": "^0.5.4"
   },
   "dependencies": {
-    "html-webpack-plugin": "^5.3.2"
+    "html-webpack-plugin": "^5.3.2",
+    "matches-subimage": "^1.0.1",
+    "pngjs": "^6.0.0"
   }
 }
