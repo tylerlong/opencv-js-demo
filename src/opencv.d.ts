@@ -1,2 +1,2 @@
-declare const opencv: any;
-export default opencv;
+declare const OpenCV: any;
+export default OpenCV;
