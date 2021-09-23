@@ -1,13 +1,7 @@
-// import cv from './opencv.js';
+import cv from './opencv.js';
 import windowButtons from '../images/window-buttons.png';
 
-const script = document.createElement('script');
-script.src = 'https://docs.opencv.org/4.5.3/opencv.js';
-document.body.appendChild(script);
-
-script.onload = () => {
-  const cv = (window as any).cv;
-
+cv.onRuntimeInitialized = () => {
   console.log(cv);
   console.log(cv.Mat);
 
