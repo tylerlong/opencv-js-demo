@@ -1,5 +1,3 @@
-// import openCV from './opencv.js';
-
 export const loadImage = (url: string): Promise<HTMLImageElement> => {
   return new Promise((resolve, reject) => {
     const image = new Image();
@@ -12,11 +10,3 @@ export const loadImage = (url: string): Promise<HTMLImageElement> => {
     };
   });
 };
-
-// export const loadOpenCV = (): Promise<any> => {
-//   return new Promise<any>(resolve => {
-//     openCV.onRuntimeInitialized = () => {
-//       resolve(openCV);
-//     };
-//   });
-// };

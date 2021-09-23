@@ -1,7 +1,6 @@
-// import openCV from './opencv.js';
-import windowButtons from '../images/window-buttons.png';
-import singleButton from '../images/single-button.png';
 import openCV from './opencv.js';
+import windowButtons from '../images/window-buttons-2.png';
+import singleButton from '../images/single-button-3.png';
 import {loadImage} from './utils';
 
 const drawCircles = (openCV: any, image: HTMLImageElement) => {
