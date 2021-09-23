@@ -1,7 +1,8 @@
 {
   "license": "MIT",
   "scripts": {
-    "serve": "webpack serve --progress --mode development"
+    "serve": "webpack serve --progress --mode development",
+    "build": "webpack --progress --mode production"
   },
   "devDependencies": {
     "@types/node": "^16.9.6",
